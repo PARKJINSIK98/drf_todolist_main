@@ -5,7 +5,6 @@ from todo.models import TodoArticle
 class TodoSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
 
-    #obj 인스턴스의 user속성에서 email값 추출하여 반환해서 user필드에 추가
     def get_user(self,obj):
         return obj.user.email
     class Meta:
